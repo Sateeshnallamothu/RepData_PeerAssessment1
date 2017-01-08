@@ -267,7 +267,7 @@ After imputing, the mean and median are 10766 and 10766 respectively.
 
 ```r
 # 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
-activity2$weekday <- ifelse(weekdays(activity2$date) %in% c('Saturday','Sunday'),'Weekday','weekend')
+activity2$weekday <- ifelse(weekdays(activity2$date) %in% c('Saturday','Sunday'),'weekend','weekday')
 activity2$weekday <- as.factor(activity2$weekday)
 avg.steps.per.interval.by.weekday <- activity2 %>% group_by(weekday,interval) %>%
                                      summarize(avg.steps=mean(steps))
@@ -278,14 +278,14 @@ head(avg.steps.per.interval.by.weekday)
 ## Source: local data frame [6 x 3]
 ## Groups: weekday [1]
 ## 
-##   weekday interval   avg.steps
-##    <fctr>    <int>       <dbl>
-## 1 Weekday        0 0.214622642
-## 2 Weekday        5 0.042452830
-## 3 Weekday       10 0.016509434
-## 4 Weekday       15 0.018867925
-## 5 Weekday       20 0.009433962
-## 6 Weekday       25 3.511792453
+##   weekday interval  avg.steps
+##    <fctr>    <int>      <dbl>
+## 1 weekday        0 2.25115304
+## 2 weekday        5 0.44528302
+## 3 weekday       10 0.17316562
+## 4 weekday       15 0.19790356
+## 5 weekday       20 0.09895178
+## 6 weekday       25 1.59035639
 ```
 
 

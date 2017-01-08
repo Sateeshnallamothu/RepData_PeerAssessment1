@@ -154,7 +154,7 @@ After imputing, the mean and median are `r round(mu.steps2,0)` and `r round(md.s
 
 ``` {r part4,results='hold'}
 # 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
-activity2$weekday <- ifelse(weekdays(activity2$date) %in% c('Saturday','Sunday'),'Weekday','weekend')
+activity2$weekday <- ifelse(weekdays(activity2$date) %in% c('Saturday','Sunday'),'weekend','weekday')
 activity2$weekday <- as.factor(activity2$weekday)
 avg.steps.per.interval.by.weekday <- activity2 %>% group_by(weekday,interval) %>%
                                      summarize(avg.steps=mean(steps))

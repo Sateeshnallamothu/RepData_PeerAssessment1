@@ -98,7 +98,7 @@ md.steps2
 ##Are there differences in activity patterns between weekdays and weekends?
 #     For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
 # 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
-activity2$weekday <- ifelse(weekdays(activity2$date) %in% c('Saturday','Sunday'),'Weekday','weekend')
+activity2$weekday <- ifelse(weekdays(activity2$date) %in% c('Saturday','Sunday'),'weekend','weekday')
 activity2$weekday <- as.factor(activity2$weekday)
 avg.steps.per.interval.by.weekday <- activity2 %>% group_by(weekday,interval) %>%
                                      summarize(avg.steps=mean(steps))
